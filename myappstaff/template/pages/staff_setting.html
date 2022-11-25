@@ -1,0 +1,265 @@
+{% extends 'homestaff.html' %}
+{% block main %}
+
+<div class="container bg-white px-5 py-3 rounded-2" style="margin-top: 10px;">
+    <div>
+        <h5 class="fw-bold">การตั้งค่า</h5>
+    </div>
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active" data-bs-toggle="tab" href="#catecory">หมวดหมู่</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#type">ประเภท</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#set">แสดงผล</a>
+        </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <!-- หมวดหมู่ -->
+        <div class="tab-pane container active" id="catecory">
+            <table class="table table-xs mb-0">
+                <thead>
+                    <tr>
+                        <th class="col-12">หมวดหมู่</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <span>อุปกรณ์สื่อสาร</span>
+                        </td>
+                        <td>
+                            <i class="bi bi-three-dots-vertical" data-bs-toggle="dropdown" aria-expanded="false"></i>
+                            <ul class="dropdown-menu dropdown-menu-lg-end  shadow-sm">
+                                <li><a class="dropdown-item btn-0 btn-sm" data-bs-toggle="modal"
+                                    data-bs-target="#edititemcatecory">แก้ไข</a>
+                                </li>
+                                <li><a class="dropdown-item btn-0 btn-sm" href="/Todo/delete/{{ td.id }}">ลบ</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+                <p class="btn btn-outline-dark rounded-pill mt-2" data-bs-toggle="modal"
+                    data-bs-target="#additemcatecory">เพิ่มหมวดหมู่</p>
+            </table>
+        </div>
+        <!-- moal เพิ่มรายการ -->
+        <div class="modal fade" id="additemcatecory" tabindex="-1" aria-labelledby="additemModal" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-fullscreen-lg-down">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="additemModal">เพิ่มหมวดหมู่</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <div class="col">
+                                <input type="text" class="form-control rounded-pill" id="#" placeholder="หมวดหมู่">
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary rounded-pill"
+                            data-bs-dismiss="modal">ยกเลิก</button>
+                        <button type="button" class="btn btn-warning rounded-pill">ยืนยัน</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- moal แก้ไขรายการ -->
+        <div class="modal fade" id="edititemcatecory" tabindex="-1" aria-labelledby="edititemModal" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-fullscreen-lg-down">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="edititemModal">แก้ไขหมวดหมู่</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <div class="col">
+                                <input type="number" class="form-control rounded-pill" id="#"
+                                    placeholder="จำนวนการแสดงผล">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary rounded-pill"
+                            data-bs-dismiss="modal">ยกเลิก</button>
+                        <button type="button" class="btn btn-warning rounded-pill">ยืนยัน</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ประเภท -->
+        <div class="tab-pane container fade" id="type">
+            <table class="table table-xs mb-0">
+                <thead>
+                    <tr>
+                        <th class="col-12">ประเภท</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <span>พัสดุ</span>
+                        </td>
+                        <td>
+                            <i class="bi bi-three-dots-vertical" data-bs-toggle="dropdown" aria-expanded="false"></i>
+                            <ul class="dropdown-menu dropdown-menu-lg-end  shadow-sm">
+                                <li><a class="dropdown-item btn-0 btn-sm"  data-bs-toggle="modal"
+                                    data-bs-target="#edititemtype">แก้ไข</a>
+                                </li>
+                                <li><a class="dropdown-item btn-0 btn-sm" href="/Todo/delete/{{ td.id }}">ลบ</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+                <p class="btn btn-outline-dark rounded-pill mt-2" data-bs-toggle="modal" data-bs-target="#additemtype">
+                    เพิ่มประเภท</p>
+            </table>
+        </div>
+        <!-- moal เพิ่มรายการ -->
+        <div class="modal fade" id="additemtype" tabindex="-1" aria-labelledby="additemModal" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-fullscreen-lg-down">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="additemModal">เพิ่มประเภท</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <div class="col">
+                                <input type="text" class="form-control rounded-pill" id="#" placeholder="ประเภท">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary rounded-pill"
+                            data-bs-dismiss="modal">ยกเลิก</button>
+                        <button type="button" class="btn btn-warning rounded-pill">ยืนยัน</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- moal แก้ไขรายการ -->
+        <div class="modal fade" id="edititemtype" tabindex="-1" aria-labelledby="edititemModal" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-fullscreen-lg-down">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="edititemModal">แก้ไขประเภท</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <div class="col">
+                                <input type="number" class="form-control rounded-pill" id="#"
+                                    placeholder="จำนวนการแสดงผล">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary rounded-pill"
+                            data-bs-dismiss="modal">ยกเลิก</button>
+                        <button type="button" class="btn btn-warning rounded-pill">ยืนยัน</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- การแสดงผล  -->
+        <div class="tab-pane container fade" id="set">
+            <table class="table table-xs mb-0">
+                <thead>
+                    <tr>
+                        <th class="col-12">จำนวน</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <span>20</span>
+                        </td>
+                        <td>
+                            <i class="bi bi-three-dots-vertical" data-bs-toggle="dropdown" aria-expanded="false"></i>
+                            <ul class="dropdown-menu dropdown-menu-lg-end  shadow-sm">
+                                <li><a class="dropdown-item btn-0 btn-sm"  data-bs-toggle="modal"
+                                    data-bs-target="#edititemset">แก้ไข</a>
+                                </li>
+                                <li><a class="dropdown-item btn-0 btn-sm" href="/Todo/delete/{{ td.id }}">ลบ</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+                <p class="btn btn-outline-dark rounded-pill mt-2" data-bs-toggle="modal" data-bs-target="#additemset">
+                    เพิ่มจำนวนการแสดงผล</p>
+            </table>
+        </div>
+        <!-- moal เพิ่มรายการ -->
+        <div class="modal fade" id="additemset" tabindex="-1" aria-labelledby="additemModal" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-fullscreen-lg-down">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="additemModal">เพิ่มจำนวนการแสดงผล</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <div class="col">
+                                <input type="number" class="form-control rounded-pill" id="#"
+                                    placeholder="จำนวนการแสดงผล">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary rounded-pill"
+                            data-bs-dismiss="modal">ยกเลิก</button>
+                        <button type="button" class="btn btn-warning rounded-pill">ยืนยัน</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- moal แก้ไขรายการ -->
+        <div class="modal fade" id="edititemset" tabindex="-1" aria-labelledby="edititemModal" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-fullscreen-lg-down">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="edititemModal">แก้ไขจำนวนการแสดงผล</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <div class="col">
+                                <input type="number" class="form-control rounded-pill" id="#"
+                                    placeholder="จำนวนการแสดงผล">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary rounded-pill"
+                            data-bs-dismiss="modal">ยกเลิก</button>
+                        <button type="button" class="btn btn-warning rounded-pill">ยืนยัน</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,137 @@
+{% extends 'home.html' %}
+{% block main %}
+
+<div class=" container py-3">
+    <div class="bg-white rounded-2 mb-4 px-5 py-3">
+        <div class="d-flex justify-content-between ">
+            <div>
+                <h5 class="fw-bold">แนะนำพัสดุเข้าสู่ระบบ</h5>
+            </div>
+            <!-- <div>
+                    <a class="text-muted">ดูรายการทั้งหมด</a>
+                </div> -->
+        </div>
+        <hr>
+
+
+        <div class="row mt-3">
+            <form action="">
+                <div class="col-md-12">
+                    <label class="labels">ชื่อ</label>
+                    <input type="text" class="form-control rounded-pill">
+                </div>
+                <div class="row mt-2">
+                    <div class="col-md-6">
+                        <label class="labels">ยี่ห้อ</label>
+                        <input type="text" class="form-control rounded-pill">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="labels">หมวดหมู่</label>
+                        <select class="form-select rounded-pill" aria-label="Default select example">
+                            <option selected>หมวดหมู่</option>
+                            <option value="อุปกรณ์สือสาร">อุปกรณ์สื่อสาร</option>
+                            <option value="โดรน">โดรน</option>
+                            <option value="คอมพิวเตอร์">คอมพิวเตอร์</option>
+                            <option value="IoT">IoT</option>
+                        </select>
+
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-md-6">
+                        <label class="labels">จำนวน</label>
+                        <input type="text" class="form-control rounded-pill">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="labels">ราคา</label>
+                        <input type="text" class="form-control rounded-pill">
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <label class="labels">ลิงก์พัสดุ</label>
+                    <input type="text" class="form-control rounded-pill">
+                </div>
+                <div class="col-md-12">
+                    <label class="labels ps-2">รายละเอียด</label>
+                    <textarea class="form-control  rounded-4" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+                <div class="mt-5 text-center">
+                    <button class="btn btn-warning text-black profile-button rounded-pill" type="button">
+                        ยืนยันการแนะนำ
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class=" container py-3">
+    <div class="bg-white rounded-2 mb-4 px-5 py-3">
+        <div class="d-flex justify-content-between ">
+            <div>
+                <h5 class="fw-bold">ประวัติแนะนำพัสดุ</h5>
+            </div>
+            <div>
+                <a class="text-muted">ดูรายการทั้งหมด</a>
+            </div>
+        </div>
+        <hr>
+
+
+        <div class="row mt-3">
+            <table class="table table-borderles table-mobile-responsive table-mobile-side" >
+                <thead class="table-dark">
+                    <tr>
+                        <td></td>
+                        <th class="col-md-0 text-center" scope="col">ลำดับ</th>
+                        <th class="col-md-7" scope="col">ชื่อ</th>
+                        <th class="col-md-1 text-center" scope="col">ยี่ห้อ</th>
+                        <th class="col-md-1 text-center" scope="col">หมวดหมู่</th>
+                        <th class="col-md-1 text-center" scope="col">จำนวน</th>
+                        <th class="col-md-2 text-center" scope="col">สถานะ</th>
+                    </tr>
+                </thead>
+                <tbody id="xTable">
+                    <tr class="qrow text-center">
+                        <td><span class="fa fa-trash" value="Delete"></span></td>
+                        <th scope="row">1</th>
+                        <td>
+                            <p class="text-start">Macbook Air M2</p>
+                        </td>
+                        <td>
+                            <p>Apple</p>
+                        </td>
+                        <td>
+                            <p>คอมพิวเตอร์</p>
+                        </td>
+                        <td>
+                            <p>1</p>
+                        </td>
+                        <td>
+                            <p class="text-center">กำลังดำเนินการ</p>
+                        </td>
+                    </tr>
+                    <tr class="qrow text-center">
+                        <td><span class="fa fa-trash" value="Delete"></span></td>
+                        <th scope="row">1</th>
+                        <td>
+                            <p class="text-start">Macbook Air M2</p>
+                        </td>
+                        <td>
+                            <p>Apple</p>
+                        </td>
+                        <td>
+                            <p>คอมพิวเตอร์</p>
+                        </td>
+                        <td>
+                            <p>1</p>
+                        </td>
+                        <td>
+                            <p class="text-center">กำลังดำเนินการ</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {% endblock %}
